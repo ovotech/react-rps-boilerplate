@@ -26,7 +26,7 @@ export default class Game extends Component {
         {this.state.winner && (
           <div>
             {this.state.winner !== "Draw" && (
-              <h3>Winner: {this.state.winner}!</h3>
+              <h3>Winner: {this.state.result}!</h3>
             )}
             {this.state.winner === "Draw" && <h3>It's a draw!</h3>}
             <button onClick={this.reset}>Again!</button>
