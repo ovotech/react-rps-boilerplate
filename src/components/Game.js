@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { WEAPONS, play } from "../game/game";
+import { GESTURES, play } from "../game/game";
 
 export default class Game extends Component {
   state = {
     winner: false
   };
-  play(playerWeapon) {
-    const result = play(playerWeapon);
+  play(playerGesture) {
+    const result = play(playerGesture);
 
     this.setState(result);
   }
@@ -15,9 +15,9 @@ export default class Game extends Component {
     return (
       <div>
         <h1>Rock, Paper, Scissors</h1>
-        <h2>Pick a weapon:</h2>
+        <h2>Pick a gesture:</h2>
         <div>
-          {WEAPONS.map(w => (
+          {GESTURES.map(w => (
             <button onClick={() => this.play(w)} key={w}>
               {w}
             </button>

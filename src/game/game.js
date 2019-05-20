@@ -1,12 +1,12 @@
-export const WEAPONS = ["Rock", "Paper", "Scissors"];
+export const GESTURES = ["Rock", "Paper", "Scissors"];
 
-const selectComputerWeapon = () => {
-  // TODO: Implement random selection of computer weapon
+const selectComputerGesture = () => {
+  // TODO: Implement random selection of computer gesture
   return "Rock";
 };
 
-export const play = playerWeapon => {
-  const computerWeapon = selectComputerWeapon();
+export const play = playerGesture => {
+  const computerGesture = selectComputerGesture();
 
   // TODO: Implement game logic to calculate winner
 
