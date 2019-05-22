@@ -2,14 +2,14 @@
 
 ## Setup
 
-1. Ensure `node@11.6.0` and `npm@6.5.0` are installed
+1. Ensure `node@11.6.0`, `npm@6.5.0` and `yarn@1.15.2` are installed
 2. Clone repository
-3. `npm install`
+3. `yarn`
 
 ## Running
 
-- `npm start` runs application at http://localhost:3000
+- `yarn start` runs application at http://localhost:3000
 
 ## Testing
 
-- `npm test` to run unit tests
+- `yarn test` to run unit tests
