@@ -1,5 +1,5 @@
 import * as React from "react";
-import { play, weapons, Weapon, Result } from "../game/game";
+import { play, GESTURES, Gesture, Result } from "../game/game";
 
 type State = {
   winner: Result;
@@ -12,9 +12,8 @@ export default class Game extends React.Component<{}, State> {
     hasPlayed: false
   };
 
-  play(playerWeapon: Weapon) {
-    const computerWeapon = weapons[Math.floor(Math.random() * weapons.length)];
-    const winner = play(playerWeapon, computerWeapon);
+  play(playerGesture: Gesture) {
+    const winner = play(playerGesture);
 
     this.setState({ winner, hasPlayed: true });
   }
@@ -23,9 +22,9 @@ export default class Game extends React.Component<{}, State> {
     return (
       <div>
         <h1>Rock, Paper, Scissors</h1>
-        <h2>Pick a weapon:</h2>
+        <h2>Make your selection:</h2>
         <div>
-          {weapons.map(w => (
+          {GESTURES.map(w => (
             <button onClick={() => this.play(w)} key={w}>
               {w}
             </button>
