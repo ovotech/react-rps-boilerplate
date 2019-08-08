@@ -2,9 +2,8 @@
 
 ## Setup
 
-1. Ensure `node@11.6.0`, `npm@6.5.0` and `yarn@1.15.2` are installed
-2. Clone repository
-3. `yarn`
+1. Clone repository
+2. `yarn`
 
 ## Running
 
