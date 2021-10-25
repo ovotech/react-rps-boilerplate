@@ -11,5 +11,5 @@ export const GameOutcome: React.FunctionComponent = () => {
     [Outcome.Draw]: "Draw",
   };
 
-  return <main>{outcomeText[context.outcome]}</main>;
+  return <section>{outcomeText[context.outcome]}</section>;
 };
