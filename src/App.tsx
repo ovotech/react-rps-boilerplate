@@ -7,7 +7,7 @@ class App extends React.Component {
       <GameWrapper>
         <Game>
           <header>
-            <h1>Kaluza Interview Exercise</h1>
+            <h1>Interview Exercise</h1>
           </header>
           <GameControls />
           <GameOutcome />
