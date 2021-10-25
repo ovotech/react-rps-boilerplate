@@ -1,19 +1,15 @@
 import { createContext } from "react";
-import { Outcome, Gesture } from "../game";
+import { Outcome } from "../game";
 
 export interface IGameContext {
   outcome: Outcome;
-  playerGesture: Gesture | null;
-  setPlayerGesture: (gesture: Gesture) => void;
+  setOutcome: (outcome: Outcome) => void;
 }
 
-export const GameContext = createContext<IGameContext>(
-  {
-    outcome: Outcome.None,
-    playerGesture: null,
-    setPlayerGesture: () => { },
-  }
-);
+export const GameContext = createContext<IGameContext>({
+  outcome: Outcome.None,
+  setOutcome: () => {},
+});
 
 export const GameProvider = GameContext.Provider;
 export const GameConsumer = GameContext.Consumer;

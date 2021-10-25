@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { GameContext } from "../context";
-import { Gesture, gestures, icons } from "../game";
+import { Gesture, gestures, icons, Outcome } from "../game";
 
 const Button = styled.button`
   font-size: 1em;
@@ -18,17 +18,25 @@ const Button = styled.button`
 `;
 
 export const GameControls: React.FunctionComponent = () => {
-  const context = useContext(GameContext);
+  const { setOutcome } = useContext(GameContext);
+
+  const handleGestureSelection = (playerGesture: Gesture) => {
+    // TODO:
+    // Set the outcome based on the game logic
+    //
+    setOutcome(Outcome.None);
+  };
 
   return (
     <nav>
-      {
-        gestures.map(g => (
-          <Button onClick={() => context.setPlayerGesture(g)}>
-            <span>{`${icons.get(g)} ${Gesture[g]}`}</span>
-          </Button>
-        ))
-      }
+      {gestures.map((g) => (
+        // TODO:
+        // Run gesture selection based on button clicks
+        //
+        <Button onClick={() => {}}>
+          <span>{`${icons.get(g)} ${Gesture[g]}`}</span>
+        </Button>
+      ))}
     </nav>
   );
 };

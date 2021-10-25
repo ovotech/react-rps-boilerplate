@@ -5,15 +5,11 @@ import { Outcome } from "../game";
 export const GameOutcome: React.FunctionComponent = () => {
   const context = useContext(GameContext);
   const outcomeText = {
-    [Outcome.None]: "Haven't played yet",
+    [Outcome.None]: "You haven't played yet",
     [Outcome.Win]: "Player wins",
     [Outcome.Loss]: "Computer wins",
     [Outcome.Draw]: "Draw",
   };
 
-  return (
-    <main>
-      {outcomeText[context.outcome]}
-    </main>
-  );
+  return <main>{outcomeText[context.outcome]}</main>;
 };
