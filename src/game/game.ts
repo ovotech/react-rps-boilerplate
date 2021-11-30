@@ -14,6 +14,17 @@ export enum GestureTypes {
   scissors = "Scissors",
 }
 
+const playerIsTheWinner = (
+  playerGesture: Gesture,
+  computerGesture: Gesture
+): boolean =>
+  (playerGesture === GestureTypes.rock &&
+    computerGesture === GestureTypes.scissors) ||
+  (playerGesture === GestureTypes.scissors &&
+    computerGesture === GestureTypes.paper) ||
+  (playerGesture === GestureTypes.paper &&
+    computerGesture === GestureTypes.rock);
+
 const resultsAreIdentical = (
   playerGesture: Gesture,
   computerGesture: Gesture
@@ -25,33 +36,16 @@ const resultsAreIdentical = (
   (playerGesture === GestureTypes.scissors &&
     computerGesture === GestureTypes.scissors);
 
+// rules
+// rock beats scissors
+// scissors beats paper
+// paper beats rock
 export const play = (
   playerGesture: Gesture,
   computerGesture: Gesture
-): Result => {
-  // rules
-  // rock beats scissors
-  if (
-    playerGesture === GestureTypes.rock &&
-    computerGesture === GestureTypes.scissors
-  )
-    return "Player";
-
-  // scissors beats paper
-  if (
-    playerGesture === GestureTypes.scissors &&
-    computerGesture === GestureTypes.paper
-  )
-    return "Player";
-
-  // paper beats rock
-  if (
-    playerGesture === GestureTypes.paper &&
-    computerGesture === GestureTypes.rock
-  )
-    return "Player";
-  // if values are identical -> draw
-  if (resultsAreIdentical(playerGesture, computerGesture)) return "Draw";
-
-  return "Computer";
-};
+): Result =>
+  !playerIsTheWinner(playerGesture, computerGesture)
+    ? resultsAreIdentical(playerGesture, computerGesture)
+      ? "Draw"
+      : "Computer"
+    : "Player";
